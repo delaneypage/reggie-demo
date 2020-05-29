@@ -1,0 +1,12 @@
+# Don't track content of these folders 
+/reggie
+/reggie-github
+/state-data
+/state-samples
+/state-zips
+/__pycache__
+/venv-rd
+# Or these files
+*.ipynb
+*.ipynb_checkpoints
+*.DS_Store

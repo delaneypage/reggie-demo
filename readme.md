@@ -1,0 +1,1 @@
+Folder for keeping independent helper scripts for my work with VoteShield's reggie project. 
