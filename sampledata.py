@@ -2,6 +2,7 @@ import os
 from os.path import expanduser
 import zipfile
 import zlib
+import numpy as np
 
 def get_sample(state_path, nlines):
 
@@ -52,3 +53,23 @@ def get_sample(state_path, nlines):
         zf.close()
 
     zip_sample(state_path)
+
+
+# A function I may use later
+def recurse_yaml(yaml_dict, exclude):
+    def recurse_help(yaml_dict):
+        config = {}
+        for c, v in yaml_dict.items():
+            if c not in exclude and not isinstance(v, bool):
+                if isinstance(v, dict):
+                    v = recurse_help(v)
+                elif isinstance(v, list):
+                    v = [n.lower() for n in v]
+                elif isinstance(v, str):
+                    v = v.lower()
+                config[c.lower()] = v
+        return config
+    new = recurse_help(yaml_dict)
+    for x in exclude:
+        new[x] = yaml_dict[x]
+    return new
