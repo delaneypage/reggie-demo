@@ -4,6 +4,9 @@
 /state-data
 /state-samples
 /state-zips
+/state-viz
+/reggie-7-19
+/ipynb
 /__pycache__
 /venv-rd
 # Or these files
@@ -11,3 +14,4 @@
 *.ipynb_checkpoints
 *.DS_Store
 demo.py
+.Rproj.user
